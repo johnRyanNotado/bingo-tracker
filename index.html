@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bingo Tracker</title>
+  <link rel="stylesheet" href="./css-files/index.css">
+  <link rel="stylesheet" href="./css-files/general.css">
+  <link rel="stylesheet" href="./css-files/second-section.css">
+  <link rel="stylesheet" href="./css-files/cust-patt.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script defer src="./js-files/insert-card.js"></script>
+  <script defer src="./js-files/stats-box.js"></script>
+  <script defer src="./js-files/recommend-card.js"></script>
+  <script defer src="./js-files/customize-pattern.js"></script>
+</head>
+<body>
+  
+  <header>
+    <nav>
+      <a href="#top-dir" class="header-links">HOME</a>
+    </nav>
+    <nav>
+      <a href="#second-dir" class="header-links">
+        CARDS
+      </a>
+    </nav>
+  </header>
+  <!-- for redirection -->
+  
+  <div id="content-container">
+    <section id="first-section" class="large-section">
+      <div id="top-dir" class="dir">1</div>
+      <div class="inner-section">
+        <div id="insert-card">
+          <div id="upper-first-section">
+            <div id="bingo-char" class="header">
+              <p>
+                B
+              </p>
+              <p>
+                I
+              </p>
+              <p>
+                N
+              </p>
+              <p>
+                G
+              </p>
+              <p>
+                O
+              </p>
+            </div>
+            <div id="bingo-num">
+              <ul id="b-num"></ul>
+              <ul id="i-num"></ul>
+              <ul id="n-num"></ul>
+              <ul id="g-num"></ul>
+              <ul id="o-num"></ul>
+            </div>
+          </div>
+          <div id="middle-first-section">
+            <div id="right-arrow-symbol">
+              &rarr;
+            </div>
+          </div>
+          <div id="lower-first-section">
+        
+            <div id="input-value-container">
+              <input id="input-value" type="number" value="0" disabled>
+            </div>
+            <div id="command-buttons">
+              <button id="insert-btn">INSERT</button>
+              <button id="undo-btn">UNDO</button>
+              <button id="save-btn">SAVE</button>
+              <button id="delete-btn">DELETE</button>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      <div class="inner-section">
+        <div id="stats-box">
+          <div id="stats-header" class="header">
+            <div id="stats-header-title">
+              <p id="stats-title">
+              </p>
+            </div>
+            <div id="stats-header-letters">
+              <p>B</p>
+              <p>I</p>
+              <p>N</p>
+              <p>G</p>
+              <p>O</p>
+            </div>
+            <div id="stats-header-symbols">
+              <div>
+                <p>#</p>
+                <p>%</p>
+              </div>
+              <div>
+                <p>#</p>
+                <p>%</p>
+              </div>
+              <div>
+                <p>#</p>
+                <p>%</p>
+              </div>
+              <div>
+                <p>#</p>
+                <p>%</p>
+              </div>
+              <div id="last-symbol">
+                <p>#</p>
+                <p>%</p>
+              </div>
+            </div>
+          </div>
+        
+          <div id="stats-container">
+            <div id="b-at-stats">
+              <ul id="b-at-num" class="stats-list"></ul>
+            </div>
+            <div id="i-at-stats">
+              <ul id="i-at-num" class="stats-list"></ul>
+            </div>
+            <div id="n-at-stats">
+              <ul id="n-at-num" class="stats-list"></ul>
+            </div>
+            <div id="g-at-stats">
+              <ul id="g-at-num" class="stats-list"></ul>
+            </div>
+            <div id="o-at-stats">
+              <ul id="o-at-num" class="stats-list"></ul>
+            </div>
+          </div>
+        
+          <div id="stats-lower-section">
+            <div id="stats-command-buttons">
+              <select name="" id="stats-selector">
+                <option value="allTime">ALL TIME</option>
+                <option value="last20">LAST 20</option>
+                <option value="last10">LAST 10</option>
+                <option value="last5">LAST 5</option>
+              </select>
+              <button id="delete-stats-btn">DELETE</button>
+        
+            </div>
+        
+          </div>
+        </div>
+      </div>
+      <div class="curve background1"></div>
+    </section>
+    
+    <section id="second-section" class="large-section">
+      <div id="second-dir" class="dir">.</div>
+      <div class="curve background2"></div>
+      <div class="inner-section">
+        <div id="recommendation-box">
+          <div class="recommendation-container">
+            <div class="card-container">
+              <div class="recommendation-card" id="recommendation-card-1">
+                <div class="reco-card-header">
+                  <p>B</p>
+                  <p>I</p>
+                  <p>N</p>
+                  <p>G</p>
+                  <p>O</p>
+                </div>
+                <div class="reco-card-body">
+                  <ul id="card-1-1">
+                    <li id="re-a-b-1"></li>
+                    <li id="re-a-b-1"></li>
+                    <li id="re-a-b-1"></li>
+                    <li id="re-a-b-1"></li>
+                    <li id="re-a-b-1"></li>
+                  </ul>
+                  <ul id="card-1-2">
+                    <li id="re-a-b-1"></li>
+                    <li id="re-a-b-1"></li>
+                    <li id="re-a-b-1"></li>
+                    <li id="re-a-b-1"></li>
+                    <li id="re-a-b-1"></li>
+                  </ul>
+                  <ul id="card-1-3">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="card-1-4">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="card-1-5">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </div>
+              <button class="cust-patt-btn" id="cust-patt-btn-1">
+                <div class="patt-card-body">
+                  <ul id="patt-1-1">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="patt-1-2">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="patt-1-3">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="patt-1-4">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="patt-1-5">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </button>
+            </div>
+
+            <div class="card-container">
+              <div class="recommendation-card" id="recommendation-card-2">
+                <div class="reco-card-header">
+                  <p>B</p>
+                  <p>I</p>
+                  <p>N</p>
+                  <p>G</p>
+                  <p>O</p>
+                </div>
+                <div class="reco-card-body">
+                  <ul id="card-2-1">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="card-2-2">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="card-2-3">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="card-2-4">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="card-2-5">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </div>
+              <button class="cust-patt-btn" id="cust-patt-btn-2">
+                <div class="patt-card-body">
+                  <ul id="patt-2-1">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="patt-2-2">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="patt-2-3">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="patt-2-4">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="patt-2-5">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>  
+
+      <div class="inner-section">
+        <div id="recommendation-box">
+          <div class="recommendation-container">
+            <div class="card-container">
+              <div class="recommendation-card" id="recommendation-card-3">
+                <div class="reco-card-header">
+                  <p>B</p>
+                  <p>I</p>
+                  <p>N</p>
+                  <p>G</p>
+                  <p>O</p>
+                </div>
+                <div class="reco-card-body">
+                  <ul id="card-3-1">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="card-3-2">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="card-3-3">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="card-3-4">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="card-3-5">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </div>
+              <button class="cust-patt-btn" id="cust-patt-btn-3">
+                <div class="patt-card-body">
+                  <ul id="patt-3-1">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="patt-3-2">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="patt-3-3">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="patt-3-4">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="patt-3-5">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </button>
+            </div>
+
+            <div class="card-container">
+              <div class="recommendation-card" id="recommendation-card-4">
+                <div class="reco-card-header">
+                  <p>B</p>
+                  <p>I</p>
+                  <p>N</p>
+                  <p>G</p>
+                  <p>O</p>
+                </div>
+                <div class="reco-card-body">
+                  <ul id="card-4-1">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="card-4-2">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="card-4-3">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="card-4-4">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="card-4-5">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </div>
+              <button class="cust-patt-btn" id="cust-patt-btn-4">
+                <div class="patt-card-body">
+                  <ul id="patt-4-1">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="patt-4-2">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="patt-4-3">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="patt-4-4">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul id="patt-4-5">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="curve background3"></div>
+    </section>
+  </div>
+
+  <section id="invisble-section">
+   
+    <div id="cust-patt" >
+      <div id="customize-pattern-card">
+        <div id="checkbox-header">
+          <p>B</p>
+          <p>I</p>
+          <p>N</p>
+          <p>G</p>
+          <p>0</p>
+        </div>
+        <div id="checkbox-container">
+          <div id="checkbox-matrix-1-1" class="checkbox-matrix">
+            <label for="check1" id="checkbox1">
+            </label>
+            <input type="checkbox" id="check1-1" value="1-1">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-1-2" class="checkbox-matrix">
+            <label for="check2"></label>
+            <input type="checkbox" id="check2-1">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-1-3" class="checkbox-matrix">
+            <label for="check3"></label>
+            <input type="checkbox" id="check3-1">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-1-4" class="checkbox-matrix">
+            <label for="check4"></label>
+            <input type="checkbox" id="check4-1">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-1-5" class="checkbox-matrix">
+            <label for="check5"></label>
+            <input type="checkbox" id="check5-1">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-2-1" class="checkbox-matrix">
+            <label for="check6"></label>
+            <input type="checkbox" id="check1-2">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-2-2" class="checkbox-matrix">
+            <label for="check7"></label>
+            <input type="checkbox" id="check2-2">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-2-3" class="checkbox-matrix">
+            <label for="check8"></label>
+            <input type="checkbox" id="check3-2">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-2-4" class="checkbox-matrix">
+            <label for="check9"></label>
+            <input type="checkbox" id="check4-2">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-2-5" class="checkbox-matrix">
+            <label for="check10"></label>
+            <input type="checkbox" id="check5-2">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-3-1" class="checkbox-matrix">
+            <label for="check11"></label>
+            <input type="checkbox" id="check1-3">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-3-2" class="checkbox-matrix">
+            <label for="check12"></label>
+            <input type="checkbox" id="check2-3">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-3-3" class="checkbox-matrix">
+            <label for="check13"></label>
+            <input type="checkbox" id="check3-3" checked disabled>
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-3-4" class="checkbox-matrix">
+            <label for="check14"></label>
+            <input type="checkbox" id="check4-3">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-3-5" class="checkbox-matrix">
+            <label for="check15"></label>
+            <input type="checkbox" id="check5-3">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-4-1" class="checkbox-matrix">
+            <label for="check16"></label>
+            <input type="checkbox" id="check1-4">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-4-2" class="checkbox-matrix">
+            <label for="check17"></label>
+            <input type="checkbox" id="check2-4">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-4-3" class="checkbox-matrix">
+            <label for="check18"></label>
+            <input type="checkbox" id="check3-4">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-4-4" class="checkbox-matrix">
+            <label for="check19"></label>
+            <input type="checkbox" id="check4-4">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-4-5" class="checkbox-matrix">
+            <label for="check20"></label>
+            <input type="checkbox" id="check5-4">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-5-1" class="checkbox-matrix">
+            <label for="check21"></label>
+            <input type="checkbox" id="check1-5">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-5-2" class="checkbox-matrix">
+            <label for="check22"></label>
+            <input type="checkbox" id="check2-5">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-5-3" class="checkbox-matrix">
+            <label for="check23"></label>
+            <input type="checkbox" id="check3-5">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-5-4" class="checkbox-matrix">
+            <label for="check24"></label>
+            <input type="checkbox" id="check4-5">
+            <div></div>
+          </div>
+          <div id="checkbox-matrix-5-5" class="checkbox-matrix">
+            <label for="check25"></label>
+            <input type="checkbox" id="check5-5">
+            <div></div>
+          </div>
+        </div>
+        <div id="customize-pattern-buttons">
+          <button id="save-cust-patt-btn">
+          </button>
+          <button id="cancel-cust-patt-btn"></button>
+        </div>
+        <!-- end of card -->
+      </div>
+    
+    </div>
+   
+    
+  </section>
+  <footer>
+    <p>Developed by <span><a href="https://www.youtube.com" targer="_blank" id="developers-link">John Ryan Notado</a></span>.</p>
+   
+  </footer>
+  
+
+</body>
+</html>

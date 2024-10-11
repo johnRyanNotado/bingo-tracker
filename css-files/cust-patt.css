@@ -1,0 +1,134 @@
+#cust-patt {
+  background: rgb(209, 184, 188, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  bottom: 0;
+  display: none;
+}
+
+#customize-pattern-card {
+  height: 250px;
+  width: 250px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: var(--blue-accent-1-color);
+  padding: 16px;
+  border-radius: 10%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+#checkbox-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  text-align: center;
+  height: 10%;
+  font-weight: 900;
+  color: white;
+}
+
+#checkbox-container {
+  display: grid;
+  height: 90%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  row-gap: 4px;
+  column-gap: 4px;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.checkbox-matrix {
+  position: relative;
+}
+
+.checkbox-matrix input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 100;
+}
+
+.checkbox-matrix div {
+  border-radius: 20%;
+  background: linear-gradient(90deg, rgba(0, 116, 169, 1) 61%, rgba(0, 144, 183, 1) 100%);;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.checkbox-matrix input:checked ~ div {
+  background: linear-gradient(135deg, rgba(2, 196, 171, 1) 51%, rgba(0, 171, 182, 1) 100%);
+}
+
+#customize-pattern-buttons {
+  position: absolute;
+  bottom: -260px;
+  left: 166px;
+}
+
+#save-cust-patt-btn,
+#cancel-cust-patt-btn {
+ opacity: 1;
+ z-index: 101;
+ margin: auto;
+ width: 24px;
+ height: 24px;
+ border:none;
+ margin-left: 8px;
+}
+
+#cancel-cust-patt-btn {
+  border-radius: 100vh;
+}
+
+#cancel-cust-patt-btn {
+  background: url("../images/cancel-pattern-icon.png")
+}
+
+#save-cust-patt-btn {
+  background: url("../images/save-pattern-icon.png");
+}
+
+#save-cust-patt-btn:hover,
+#cancel-cust-patt-btn:hover {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+#save-cust-patt-btn::after,
+#cancel-cust-patt-btn::after {
+  position: absolute;
+  opacity: 0;
+  top: 35px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 40%, rgba(206, 178, 213, 0.7) 100%);
+  width: 150px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-family: Roboto, Arial;
+  white-space: nowrap;
+  transition: opacity 0.15s 0.7s;
+  pointer-events: none;
+}
+
+#save-cust-patt-btn::after {
+  content: "Save pattern...";
+  left: 33px;
+}
+#cancel-cust-patt-btn::after {
+  content: "Cancel...";
+  left: 68px;
+}
+
+#save-cust-patt-btn:hover::after,
+#cancel-cust-patt-btn:hover::after {
+  opacity: 1;
+}

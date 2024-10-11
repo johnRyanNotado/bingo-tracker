@@ -1,0 +1,9 @@
+add ready state change function that will tell that the page is ready
+
+document.addEventListener("readystatechange", (event) => {
+  if (event.target.readyState === "complete") {
+    initApp();
+  }
+});
+
+the initApp will start to call different functions that will initialize the things needed to be initialized and add event listeners to those that needs it.
